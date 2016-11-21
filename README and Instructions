@@ -1,0 +1,73 @@
+##########################
+ImageJ FRET and coloc macro
+##########################
+v 1.0 - 10th Nov 2016
+
+developed by B.Hochreiter and J.A.Schmid
+
+for questions and help, feel free to contact: bernhard.hochreiter@meduniwien.ac.at 
+
+This Macro was developed for the correct evaluation of FRET and colocalisation data of images of biological samples like Cells and Tissues.
+This macro is available under GPLv3 (General Public Licence version 3). It can be used, modified and distributed freely under the same license with proper acknowledgement of the original authors.
+For more information visit: https://opensource.org/licenses/GPL-3.0
+
+#########################
+WHAT YOU NEED:
+
+In order to do the correct analysis, you have to have images of your samples. These have to an image stack of three images with the order of 1) Donor image, 2) rawFRET image and 3) Acceptor image.
+The Donor image is the signal at Donor excitation and Donor emission. The rawFRET image is at Donor excitation and Acceptor emission. The Acceptor image is at Acceptor excitation and Acceptor emission.
+
+You will need a certain amount of images only featuring the Donor or Acceptor alone, in order to determine the bleedthrough factors.
+It is incredibly important that all images are measured with exactly the same adjustment on the microscope system (namely same Gain, objective, light intensity, confocal adjustments, image size, etc.), otherwise a correct FRET evaluation is impossible.
+
+#########################
+HOW TO USE:
+
+First, you have to download either ImageJ (https://imagej.nih.gov/ij/), or the software package Fiji (http://fiji.sc/), start it, and   load the Macro into it by dragging and dropping it onto the software. This should open the macro in a separate window.
+First, you will see a header in the macro containing some text and licensing information.
+After a row of hashtags, you will see a string of variables that can be modified. They are listed under variables.
+You can adjust these to modify the specification of the analysis. If the variable "batchmode" is set to "false", they will be asked by a window during analysis anyway.
+
+After this you can eitehr start the macro py pressing "run", or use it in batchmode. For this see "Running multiple images in batchmode"
+
+#########################
+VARIABLES:
+
+batchmode:
+The batchmode decides whether these variables will be asked by the macro after it has been started. If batchmode is set to false, you do not need to further investigate the variables. If batchmode is true, the macro will not ask for the needed variables, and can be run on multiple images in succession. For more information on this, see "Running multiple images in batchmode" down below.
+
+donorbleed, acceptorbleed and cellsize:
+These are variables that are very important for the correct determination of FRET. donorbleed and acceptorbleed can be determined by the macro. For the determination of donorbleed, load a dataset of samples only containing the donor and choose "donbleed" for the variable "analysis". For acceptorbleed, choose a dataset of samples only containing Acceptor and choose "accbleed" for the variable "analysis".
+
+analysis:
+as described above, this distinguishes between the determination of the donorbleed and acceptorbleed factors, and the determination of FRET. donorbleed and acceptorbleed are necessary for FRET analysis.
+
+celldetection:
+this determines which channel is used for the detection of cells. You can either use the "donor", the "acceptor" or a projection of both. "maxprojection" will include all objects that are positive in either the donor, the acceptor, or both channels. "minprojection" will only use overlapping areas where both channels show a positive signal. Please note that minprojection is the recommended adjustment, as the others can lead to various false positives.
+
+pearson:
+This adjustment determines whether the peason value should be determined for each object. It can be set to true or false.
+
+colormix:
+This adjustment determines whether the colormix coefficient value should be determined for each object. It can be set to true or false.
+
+smooth:
+This adjustment determines whether the images should be smoothed before analysis. This can be helpful for grainy images. It can be set to true or false.
+
+watershed:
+Watershedding will take large and complex objects and separate them by an algorithm that determines circularity. For more information see the documentation of ImageJ.It is highly recomended to use this if you have overexposed pixels in your image, as ImageJ is not able to exclude holes from objects. It can be set to true or false.
+
+oeremove:
+This adjustment will remove overexposed pixels during analysis. It is highly recommended to set this to true, as overexposed ixels will lead to a wrong FRET value. It can be set to true or false.
+
+threshold:
+This determines the algorithm of thresholding for cell detection. For more information see the ImageJ documentation. Available options are: "Default", "Manual", "Huang", "Intermodes", "IsoData", "Li", "MaxEntropy", "Mean", "MinError", "Minimum", "Moments", "Otsu", "Percentile", "RenyiEntropy", "Shanbhag", "Triangle", "Yen"
+
+overlayimage:
+This adjustment will create an overlayimage of Donor and acceptor as a result. It can be set to true or false.
+
+#################################################
+RUNNING MULTIPLE IMAGES IN BATCHMODE
+
+If you want to analyse a large array of images, you can use the batch function of ImageJ or Fiji. For this, go to Process->Batch->Macro. Adjust the macro to your liking and copy it into the field of the Batch process window. Make sure to set "batchmode" to "true" within the macro. Then select your input folder, including ONLY the images that should be analysed, and the output folder. Press "Process" in order to start the analysis.
+
