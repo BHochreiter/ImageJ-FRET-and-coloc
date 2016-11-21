@@ -7,9 +7,12 @@ developed by B.Hochreiter and J.A.Schmid
 
 for questions and help, feel free to contact: bernhard.hochreiter@meduniwien.ac.at 
 
-This Macro was developed for the correct evaluation of FRET and colocalisation data of images of biological samples like Cells and Tissues.
-This macro is available under GPLv3 (General Public Licence version 3). It can be used, modified and distributed freely under the same license with proper acknowledgement of the original authors.
-For more information visit: https://opensource.org/licenses/GPL-3.0
+This macro was developed for the correct evaluation of FRET and colocalisation data of images of biological
+samples like Cells and Tissues.
+
+This macro is available under GPLv3 (General Public Licence version 3). It can be used, modified and distributed
+freely under the same license with proper acknowledgement of the original authors. For more information visit:
+https://opensource.org/licenses/GPL-3.0
 
 #########################
 WHAT YOU NEED:
