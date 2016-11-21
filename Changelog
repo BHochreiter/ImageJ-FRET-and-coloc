@@ -1,0 +1,12 @@
+0.1 - 08.06.2016 - First Version - included pure intensity measurement
+0.2 - 09.06.2016 - Added Donor bleed, Acceptor Bleed and FRET-EFF calculation
+0.3 - 10.06.2016 - Added possibility to measure multiple opened pictures
+0.4 - 10.06.2016 - Added manual detection of background
+0.5 - 13.06.2016 - Solved a bug that left empty rows when results table got too long, added option to turn off watershedding, reworded dialogbox and added pre-release version disclaimer
+0.6 - 15.09.2016 - Added colocalization analysis with coloc 2
+0.7 - 20.09.2016 - re-writing of some code, batch possibility, including coloc
+0.8 - 21.09.2016 - re-writing of coloc by hand
+0.9 - 22.09.2016 - Bugfixing of coloc, rewriting of some code for coloc,
+0.10 - 22.09.2016 - added Color mix coefficient, added printout of max and min area
+0.11 - 22.09.2016 - added area measurement, some bugfixes
+1.0 - 10.11.2016 - Streamlining of code, change of coloc area determination using binary masks, added batchmode and dialogue box
