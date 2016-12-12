@@ -651,7 +651,7 @@ selectWindow("Acceptor");
 			setSlice(5);
 					getStatistics(area, mean); 
 					setResult("FRET-Eff.(%) (pixel)", row, mean);
-					setResult("FRET-Eff.(%) (area)", row, y/d*100);
+					setResult("FRET-Eff.(%) (area)", row, y/(y+d)*100);
 
 			setResult("Total cell area", row, totalarea);
 			setResult("colocalisation area", row, overlaparea);
