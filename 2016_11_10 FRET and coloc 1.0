@@ -1,10 +1,10 @@
 // BATCH MACRO FOR FRET AND PEARSON-COEFFICIENT MEASUREMENT
 
-// 1.0 RELEASE VERSION
+// 1.1 RELEASE VERSION
 
 // Intensity based FRET macro for ImageJ combined with colocalization analysis
 // Written by Bernhard Hochreiter and Johannes A. Schmid, Medical University Vienna 
-// Version 1.0 , 10. Nov. 2016
+// Version 1.1 , February 2016
 
 // This macro is available under GPLv3 (General Public Licence version 3). It can be used, modified and
 // distributed freely under the same license with proper acknowledgement of the original authors.
@@ -650,8 +650,9 @@ selectWindow("Acceptor");
 
 			setSlice(5);
 					getStatistics(area, mean); 
-					setResult("FRET-Eff.(%) (pixel)", row, mean);
-					setResult("FRET-Eff.(%) (area)", row, y/(y+d)*100);
+					setResult("App. FRET-Eff.(%) (pixel)", row, mean);
+					setResult("App. FRET-Eff.(%) (area)", row, y/(y+d)*100);
+					setResult("NFRET(Xia)", row, y/sqrt(d*a));
 
 			setResult("Total cell area", row, totalarea);
 			setResult("colocalisation area", row, overlaparea);
