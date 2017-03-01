@@ -9,4 +9,6 @@
 0.9 - 22.09.2016 - Bugfixing of coloc, rewriting of some code for coloc,
 0.10 - 22.09.2016 - added Color mix coefficient, added printout of max and min area
 0.11 - 22.09.2016 - added area measurement, some bugfixes
+
 1.0 - 10.11.2016 - Streamlining of code, change of coloc area determination using binary masks, added batchmode and dialogue box
+1.1 - 01.03.2017 - Added the calculation of NFRET
